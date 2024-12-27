@@ -1,0 +1,297 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    animation: fadeIn 2s ease-out; /* Fade-in effect for the page */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Styling for Transparent Header */
+.navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%; /* Full width */
+    background: rgba(0, 0, 0, 0.85); /* Dark transparent background */
+    padding: 20px 30px;
+    z-index: 100;
+    display: flex;
+    justify-content: flex-end; /* Align navbar content to the right */
+    align-items: center;
+    backdrop-filter: blur(12px); /* Apply blur effect to content behind navbar */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Subtle shadow */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Highlight active link */
+.navbar a {
+    color: #fff;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar a.active {
+    background-color: #ff4081; /* Highlight current section */
+}
+
+.navbar a:hover {
+    background-color: #ff4081; /* Pink hover effect */
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Style untuk Lightbox */
+.lightbox-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Overlay gelap */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 90%;
+    border: 10px solid #fff;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+}
+
+.lightbox-overlay.active {
+    display: flex; /* Menampilkan overlay ketika aktif */
+}
+
+.lightbox-overlay .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1001; /* Pastikan tombol di atas overlay */
+}
+
+/* Profile Section */
+.profile-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 30px;
+    background: linear-gradient(145deg, #2a2a2a, #121212); /* Gradient background */
+    height: 100vh;
+    position: relative;
+}
+
+.profile-text {
+    max-width: 50%;
+    text-align: left;
+}
+
+.profile-text h1 {
+    font-size: 70px;
+    color: #fff;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+    margin-bottom: 20px;
+}
+
+.profile-text .tagline {
+    font-size: 35px;
+    color: #bbb;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+.social-icons {
+    display: flex;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 45px;
+    margin: 0 20px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ff4081;
+    transform: scale(1.3); /* Enhanced hover effect */
+}
+
+/* Profile Image */
+.profile-img-container {
+    width: 40%;
+    text-align: center;
+}
+
+.profile-img {
+    border-radius: 50%;
+    width: 350px;
+    height: 350px;
+    border: 10px solid #fff;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.profile-img:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.7);
+}
+
+/* Experience and Education Sections */
+.content-section {
+    margin-bottom: 60px;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-out forwards;
+}
+
+.content-section h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2.2rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 30px;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+/* Container for Items */
+.experience-items, .education-items {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+/* Center Align the Section Title */
+.Family h2 {
+    text-align: center; /* Center the text */
+    font-size: 2.5rem; /* Adjust font size for better visibility */
+    margin-bottom: 30px; /* Add spacing below the title */
+    color: #fff; /* White color for contrast */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Add a shadow for a stylish effect */
+    letter-spacing: 1.5px; /* Slight spacing between letters */
+}
+
+/* Individual Experience and Education Item */
+.experience-item, .education-item {
+    background: linear-gradient(145deg, #333, #444);
+    padding: 25px;
+    border-radius: 15px;
+    width: 45%;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    display: flex;
+    flex-direction: column; /* Stack the image and text vertically */
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.experience-item:hover, .education-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+}
+
+/* Image Container for Experience and Education */
+.experience-item .image-container, .education-item .image-container {
+    width: 80%; /* Make the image container smaller for better layout */
+    height: 200px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.experience-item .image-container img, .education-item .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.experience-item .image-container:hover img, .education-item .image-container:hover img {
+    transform: scale(1.1);
+}
+
+/* Text Content for Experience and Education */
+.experience-item .experience-text, .education-item .education-text {
+    width: 100%; /* Make text container take the full width */
+    color: #ddd;
+    text-align: center;
+}
+
+.experience-item .experience-text h3, .education-item .education-text h3 {
+    font-size: 1.6rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.experience-item .experience-text p, .education-item .education-text p {
+    font-size: 1.1rem;
+    color: #bbb;
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .portfolio-container {
+        width: 90%;
+    }
+
+    .profile-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-img-container {
+        margin-top: 20px;
+    }
+
+    .experience-items, .education-items {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .experience-item, .education-item {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
